@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Return to Yahweh</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html">← Back</a>
+
+    <div class="hymn-header">
+      <h1>What Return to Yahweh</h1>
+      <div class="translation-titles">
+        <span class="lang-pill">en: What Return to Yahweh</span>
+      </div>
+    </div>
+
+    <div class="lang-toggles" id="langToggles">
+      <button
+        class="lang-toggle"
+        data-lang="en"
+        aria-pressed="false"
+      >en</button>
+    </div>
+
+    <div class="body">
+      <div class="section verse">
+        <div class="section-label">
+          verse 1
+        </div>
+        <div class="lines">
+          <div class="line-group">
+            <span class="line lang-en" data-lang="en">What return to Yahweh can I make</span>
+            <hr class="line-divider">
+          </div>
+          <div class="line-group">
+            <span class="line lang-en" data-lang="en">What return to Yahweh can I make</span>
+            <hr class="line-divider">
+          </div>
+          <div class="line-group">
+            <span class="line lang-en" data-lang="en">For blessings of every kind from Him that I have received</span>
+            <hr class="line-divider">
+          </div>
+        </div>
+      </div>
+      <div class="section chorus">
+        <div class="section-label">
+          chorus
+        </div>
+        <div class="lines">
+          <div class="line-group">
+            <span class="line lang-en" data-lang="en">What return to Yahweh, what returns can I make</span>
+            <hr class="line-divider">
+          </div>
+          <div class="line-group">
+            <span class="line lang-en" data-lang="en">What return to Yahweh, what returns can I make</span>
+            <hr class="line-divider">
+          </div>
+          <div class="line-group">
+            <span class="line lang-en" data-lang="en">What return to Yahweh</span>
+            <hr class="line-divider">
+          </div>
+          <div class="line-group">
+            <span class="line lang-en" data-lang="en">For blessings of every kind from Him that I have received</span>
+            <hr class="line-divider">
+          </div>
+        </div>
+      </div>
+      <div class="section verse">
+        <div class="section-label">
+          verse 3
+        </div>
+        <div class="lines">
+          <div class="line-group">
+            <span class="line lang-en" data-lang="en">He created me the Lord</span>
+            <hr class="line-divider">
+          </div>
+          <div class="line-group">
+            <span class="line lang-en" data-lang="en">And He annointed me the Lord</span>
+            <hr class="line-divider">
+          </div>
+          <div class="line-group">
+            <span class="line lang-en" data-lang="en">For blessings of every kind from Him that I have received</span>
+            <hr class="line-divider">
+          </div>
+        </div>
+      </div>
+      <div class="section verse">
+        <div class="section-label">
+          verse 4
+        </div>
+        <div class="lines">
+          <div class="line-group">
+            <span class="line lang-en" data-lang="en">He purifies me and strengthens me</span>
+            <hr class="line-divider">
+          </div>
+          <div class="line-group">
+            <span class="line lang-en" data-lang="en">By the Spirit, the Spirit of power</span>
+            <hr class="line-divider">
+          </div>
+          <div class="line-group">
+            <span class="line lang-en" data-lang="en">For blessings of every kind from Him that I have received</span>
+            <hr class="line-divider">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const primaryLang = "en";
+    const firstTranslationLang = "";
+
+    // Track which two are currently active (order matters — oldest first)
+    const active = [primaryLang, firstTranslationLang].filter(Boolean);
+
+    function applyVisibility() {
+      document.querySelectorAll('.line').forEach(el => {
+        el.classList.toggle('hidden', !active.includes(el.dataset.lang));
+      });
+      document.querySelectorAll('.lang-toggle').forEach(btn => {
+        const on = active.includes(btn.dataset.lang);
+        btn.classList.toggle('active', on);
+        btn.setAttribute('aria-pressed', on);
+      });
+    }
+
+    document.querySelectorAll('.lang-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+
+        if (active.includes(lang)) {
+          if (active.length === 2) active.splice(active.indexOf(lang), 1);
+        } else {
+          if (active.length === 2) active.shift();
+          active.push(lang);
+        }
+
+        applyVisibility();
+      });
+    });
+
+    applyVisibility();
+  </script>
+</body>
+</html>
