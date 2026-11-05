@@ -1,0 +1,40 @@
+title: Zaeni Matunda Mema
+lang: sw
+source: Sauti za Kuimba
+category: Offertory
+
+body:
+  - type: verse
+    number: 1
+    lines:
+      - Zaeni matunda mema, zaeni matunda yale
+      - Zaeni yenye baraka, zaeni ya heri
+
+  - type: chorus
+    lines:
+      - Bwana akiyapokea, yatabarikiwa vyema
+      - Zaeni matunda mema, zaeni ya heri
+
+  - type: verse
+    number: 2
+    lines:
+      - Safisha mwenendo wako, safisha matendo yako
+      - Safisha na Bwana Yesu, safisha yote
+
+  - type: verse
+    number: 3
+    lines:
+      - Fanyeni kazi kindugu, fanyeni kazi kwa bidii
+      - Fanyeni na Bwana Yesu fanyeni na yote
+
+  - type: verse
+    number: 4
+    lines:
+      - Tolea matendo yako pamoja na moyo wako
+      - Naye Bwana Mungu wako atakubariki
+
+  - type: verse
+    number: 5
+    lines:
+      - Baraka za Mungu Baba, baraka za Mungu Mwana
+      - Na za Roho Mtakatifu ziwe nanyi nyote
